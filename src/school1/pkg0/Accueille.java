@@ -76,8 +76,8 @@ public class Accueille extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Identification identi = new Identification();
-      identi.setVisible(true);
+        Identification2 identi2 = new Identification2();
+      identi2.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -86,8 +86,8 @@ public class Accueille extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       Identification identi = new Identification();
-      identi.setVisible(true);
+       Identification1 identi1 = new Identification1();
+      identi1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

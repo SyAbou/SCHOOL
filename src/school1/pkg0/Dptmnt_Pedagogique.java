@@ -61,7 +61,7 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 120, 20));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 120, -1));
 
         jButton4.setText("Groupe");
         jButton4.addActionListener(new java.awt.event.ActionListener() {

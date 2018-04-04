@@ -12,21 +12,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.stage.WindowEvent;
 import javax.swing.JOptionPane;
-import static jdk.nashorn.internal.runtime.Debug.id;
 
 /**
  *
  * @author abou
  */
-public class Identification extends javax.swing.JFrame {
+public class Identification2 extends javax.swing.JFrame {
+
     SCHOOL10 scl=new SCHOOL10();
 Connection con;
      Statement st;
      ResultSet Rs;
      PreparedStatement ps;
-    public Identification() {
+    public Identification2() {
         initComponents();
     }
 
@@ -41,77 +40,57 @@ Connection con;
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        passwd = new javax.swing.JPasswordField();
-        id = new java.awt.TextField();
+        id2 = new javax.swing.JTextField();
+        passwd2 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setModalExclusionType(null);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Login");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
-        jLabel3.setBackground(new java.awt.Color(248, 242, 242));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jLabel3.setText("Password");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        getContentPane().add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 110, -1));
+        getContentPane().add(passwd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
 
-        passwd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwdActionPerformed(evt);
-            }
-        });
-        getContentPane().add(passwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, -1));
-
-        id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
-            }
-        });
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 100, -1));
-
-        jButton1.setText("Connect");
+        jButton1.setText("Connexion");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
-
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\identifi.jpg")); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- String password=passwd.getText();
- String login=id.getText();
- if(password.contains("admin")&& (login.contains("admininistrateur"))){
-     id.setText(null);
-     passwd.setText(null);
-     System.exit(0);
-     Dptmnt_Pedagogique dpd= new Dptmnt_Pedagogique();
-              dpd.setVisible(true);
+ try{
+    con=scl.obtenirconnexion();
+          String sql="Select *from agent WHERE idAgent='"+id2.getText()+"'and mopassAgent='"+passwd2.getText()+"' ";
+          ps=con.prepareStatement(sql);
+          Rs=ps.executeQuery();
+          if(Rs.next()){
+              JOptionPane.showMessageDialog(null,"correct");
+              Dptment_Administratif dpa= new Dptment_Administratif();
+              dpa.setVisible(rootPaneCheckingEnabled);
+              new Identification2();
              
-              
- }
+       }else{
+              JOptionPane.showMessageDialog(null,"identifiant ou mot de passe incorrect");
+          }
+        
+       } catch (SQLException ex) {
+         Logger.getLogger(Identification.class.getName()).log(Level.SEVERE, null, ex);
+     }
        
-                                            
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void passwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,31 +109,30 @@ Connection con;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Identification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Identification2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Identification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Identification2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Identification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Identification2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Identification.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Identification2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Identification().setVisible(true);
+                new Identification2().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.TextField id;
+    private javax.swing.JTextField id2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField passwd;
+    private javax.swing.JPasswordField passwd2;
     // End of variables declaration//GEN-END:variables
-
 }
