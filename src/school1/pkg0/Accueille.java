@@ -41,8 +41,7 @@ public class Accueille extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setModalExclusionType(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Directeur");

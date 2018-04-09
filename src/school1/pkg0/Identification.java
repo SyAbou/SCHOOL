@@ -22,10 +22,10 @@ import static jdk.nashorn.internal.runtime.Debug.id;
  */
 public class Identification extends javax.swing.JFrame {
     SCHOOL10 scl=new SCHOOL10();
-Connection con;
-     Statement st;
-     ResultSet Rs;
-     PreparedStatement ps;
+Connection conect;
+     Statement stm;
+     ResultSet Rst;
+     PreparedStatement pst;
     public Identification() {
         initComponents();
     }
@@ -41,13 +41,12 @@ Connection con;
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        passwd = new javax.swing.JPasswordField();
+        mdp = new javax.swing.JPasswordField();
         id = new java.awt.TextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setModalExclusionType(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -60,12 +59,12 @@ Connection con;
         jLabel3.setText("password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        passwd.addActionListener(new java.awt.event.ActionListener() {
+        mdp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwdActionPerformed(evt);
+                mdpActionPerformed(evt);
             }
         });
-        getContentPane().add(passwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, -1));
+        getContentPane().add(mdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, -1));
 
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,24 +93,30 @@ Connection con;
     }//GEN-LAST:event_idActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- String password=passwd.getText();
- String login=id.getText();
- if(password.contains("admin")&& (login.contains("admininistrateur"))){
-     id.setText(null);
-     passwd.setText(null);
-     System.exit(0);
-     Dptmnt_Pedagogique dpd= new Dptmnt_Pedagogique();
-              dpd.setVisible(true);
+    try{
+    conect=scl.obtenirconnexion();
+          String sql="Select *from agent WHERE idAgent='"+id.getText()+"'and mopassAgent='"+mdp.getText()+"' ";
+          pst=conect.prepareStatement(sql);
+          Rst=pst.executeQuery();
+          if(Rst.next()){
+              JOptionPane.showMessageDialog(null,"correct");
+              Administrateur admi= new Administrateur();
+              admi.setVisible(rootPaneCheckingEnabled);
+              new Identification();
              
-              
- }
-       
+       }else{
+              JOptionPane.showMessageDialog(null,"identifiant ou mot de passe incorrect");
+          }
+        
+       } catch (SQLException ex) {
+         Logger.getLogger(Identification.class.getName()).log(Level.SEVERE, null, ex);
+     }   
                                             
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void passwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwdActionPerformed
+    private void mdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwdActionPerformed
+    }//GEN-LAST:event_mdpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +159,7 @@ Connection con;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField passwd;
+    private javax.swing.JPasswordField mdp;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -8,20 +8,20 @@ import java.sql.SQLException;
 public class SCHOOL10 {
 
   
-       Connection con;
+       Connection conect;
 public SCHOOL10(){
     try{
         Class.forName("com.mysql.jdbc.Driver");}
-    catch(ClassNotFoundException e){
-                                    System.err.println(e);
+    catch(ClassNotFoundException e1){
+                                    System.err.println(e1);
     }
     try{
-        con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_ecole","root","");
-    }catch(SQLException e){
-                            System.err.println(e);
+        conect=DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_ecole","root","");
+    }catch(SQLException e1){
+                            System.err.println(e1);
     }
     }
-    Connection obtenirconnexion(){return con;}
+    Connection obtenirconnexion(){return conect;}
 
     }
     

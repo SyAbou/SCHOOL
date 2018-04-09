@@ -38,7 +38,7 @@ public class Administrateur extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Inscription");
@@ -106,10 +106,15 @@ public class Administrateur extends javax.swing.JFrame {
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 90, 30));
 
         jButton9.setText("Ajout Agent");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\administrateur.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 420));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,8 +155,13 @@ public class Administrateur extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+      AjoutAgent agent = new AjoutAgent();
+        agent.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments

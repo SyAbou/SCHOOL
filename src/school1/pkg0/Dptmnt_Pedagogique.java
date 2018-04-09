@@ -35,9 +35,7 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setModalExclusionType(null);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Salle");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -45,7 +43,6 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 120, -1));
 
         jButton2.setText("Suivi Pedagogique");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +50,6 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
         jButton3.setText("Matiere");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +57,6 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 120, -1));
 
         jButton4.setText("Groupe");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +64,6 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 130, -1));
 
         jButton5.setText("Horaire");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -77,15 +71,57 @@ public class Dptmnt_Pedagogique extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 130, -1));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
         jLabel2.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         jLabel2.setText("DEPARTEMENT PEDAGOGIQUE");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\700x300_equipe.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 300));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(320, 320, 320)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jButton2))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel2))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(jButton5))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(jButton4))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jButton1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jButton3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jButton2))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
