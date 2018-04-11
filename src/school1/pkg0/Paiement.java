@@ -5,17 +5,48 @@
  */
 package school1.pkg0;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author abou
  */
 public class Paiement extends javax.swing.JFrame {
-
+SCHOOL10 scl= new SCHOOL10();
+Statement stm=null;
+Connection conect=null;
+    ResultSet Rst=null;
+    
     /**
      * Creates new form Paiement
      */
     public Paiement() {
-        initComponents();
+        
+                   initComponents();
+                    FillCombo();
+                   conect=scl.obtenirconnexion();
+                    }
+        public void  FillCombo(){
+                   try {
+                            stm=scl.obtenirconnexion().createStatement();
+   
+                                  ResultSet Rst=stm.executeQuery("Select *from etudiant");
+                                    while(Rst.next()){
+               
+                                            idEtudiant.addItem(Rst.getString("idEtudiant"));
+              
+                
+                
+            }
+    } 
+    catch(Exception e1){System.err.println(e1);{
+    }
+
+}
+
     }
 
     /**
@@ -28,14 +59,16 @@ public class Paiement extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        idP = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        MT = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        ECH1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        ECH2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        idEtudiant = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,26 +76,66 @@ public class Paiement extends javax.swing.JFrame {
 
         jLabel2.setText("Id_paiement");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
+        getContentPane().add(idP, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
 
         jLabel3.setText("Montant total");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
+        getContentPane().add(MT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
 
         jLabel4.setText("Date echeance 1");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
+        getContentPane().add(ECH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
 
         jLabel5.setText("Date echeance 2");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 130, -1));
+        getContentPane().add(ECH2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 130, -1));
 
         jButton1.setText("Valider");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
+
+        jLabel6.setText("Id_etudiant");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        idEtudiant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idEtudiantActionPerformed(evt);
+            }
+        });
+        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 130, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String id=idP.getText();
+        String mt=MT.getText();
+        String ech1=ECH1.getText();
+        String ech2=ECH2.getText();
+         
+        
+        String requete="INSERT INTO paiement(idPaiement, montantTotal,echeance1,echeance2) VALUES ('"+id+"','"+mt+"','"+ech1+"','"+ech2+"')"; 
+        try{
+           stm.executeUpdate(requete);
+           JOptionPane.showMessageDialog(null," paiement enrigistrer");
+        idP.setText("");MT.setText("");ECH1.setText("");
+        ECH2.setText("");
+         Groupe group= new Groupe();
+              group.setVisible(rootPaneCheckingEnabled);
+              new Paiement();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void idEtudiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEtudiantActionPerformed
+        
+    }//GEN-LAST:event_idEtudiantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,15 +173,17 @@ public class Paiement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ECH1;
+    private javax.swing.JTextField ECH2;
+    private javax.swing.JTextField MT;
+    private javax.swing.JComboBox<String> idEtudiant;
+    private javax.swing.JTextField idP;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
