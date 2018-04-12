@@ -59,15 +59,16 @@ public class Inscription extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)))
+                    .addComponent(jButton3)
+                    .addComponent(jButton1)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    Nouveau_etudiant nouvetud = new Nouveau_etudiant();
+        nouvetud.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
