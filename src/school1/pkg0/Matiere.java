@@ -72,6 +72,12 @@ Statement stm;
 
         jLabel3.setText("id_Matiere");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        idMatiere.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idMatiereActionPerformed(evt);
+            }
+        });
         getContentPane().add(idMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, -1));
 
         jLabel4.setText("Libelle");
@@ -130,6 +136,10 @@ Statement stm;
     private void NiveauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NiveauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NiveauActionPerformed
+
+    private void idMatiereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idMatiereActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idMatiereActionPerformed
 
     /**
      * @param args the command line arguments
