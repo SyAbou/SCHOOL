@@ -38,10 +38,8 @@ Connection conect=null;
                                   while(Rst.next()){
                
                                             idEtudiant.addItem(Rst.getString("idEtudiant"));}
-                                   ResultSet Rst1=stm.executeQuery("Select *from matiere");
-                                   while(Rst1.next()){
-               
-                                            nomMatiere.addItem(Rst1.getString("nomMatiere"));}
+                                  
+                                   
                                     
     } 
     catch(Exception e1){System.err.println(e1);{
@@ -64,61 +62,52 @@ Connection conect=null;
         jLabel3 = new javax.swing.JLabel();
         nomGroup = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        salleG = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        Session = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         idEtudiant = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        nomMatiere = new javax.swing.JComboBox<>();
         Hdeb = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         Hfin = new javax.swing.JTextField();
+        salleG = new javax.swing.JTextField();
+        Session = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        nomMatiere = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("id_Groupe");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 60, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 60, 20));
 
         idGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idGroupActionPerformed(evt);
             }
         });
-        getContentPane().add(idGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 130, -1));
+        getContentPane().add(idGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, -1));
 
         jLabel3.setText("Nom_Groupe");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
 
         nomGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomGroupActionPerformed(evt);
             }
         });
-        getContentPane().add(nomGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 130, -1));
+        getContentPane().add(nomGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 130, -1));
 
         jLabel4.setText("Salle");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 30, -1));
-
-        salleG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SALLE 1", "SALLE 2", "SALLE 3", "SALLE 4", "SALLE 5", "SALLE 6", "SALLE 7\t", "SALLE 8", "SALLE 9", "SALLE 10" }));
-        getContentPane().add(salleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 140, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 30, -1));
 
         jLabel5.setText("Heure_Debut");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, -1));
 
         jLabel6.setText("Session");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
-
-        Session.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Session.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SessionActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 140, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
 
         jButton1.setText("Enregistrer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -126,38 +115,46 @@ Connection conect=null;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, -1, -1));
 
         jLabel7.setText("id_etudiant");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         idEtudiant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idEtudiantActionPerformed(evt);
             }
         });
-        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, 20));
+        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 130, 20));
 
         jLabel8.setText("Matiere");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-
-        nomMatiere.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomMatiereActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nomMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 130, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
 
         Hdeb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HdebActionPerformed(evt);
             }
         });
-        getContentPane().add(Hdeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 60, -1));
+        getContentPane().add(Hdeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 60, -1));
 
         jLabel9.setText("Heure_Fin");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
-        getContentPane().add(Hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 70, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
+        getContentPane().add(Hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 70, -1));
+
+        salleG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salleGActionPerformed(evt);
+            }
+        });
+        getContentPane().add(salleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 120, -1));
+        getContentPane().add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 130, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\groupe.png")); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 140));
+        getContentPane().add(nomMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 130, -1));
+
+        jLabel11.setText("(Anglais,Francais,Allemand,Arabe,Espagnole)");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,10 +167,6 @@ Connection conect=null;
        
     }//GEN-LAST:event_idEtudiantActionPerformed
 
-    private void SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SessionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SessionActionPerformed
-
     private void idGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idGroupActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idGroupActionPerformed
@@ -182,20 +175,19 @@ Connection conect=null;
        
         String idg=idGroup.getText();
         String nomg=nomGroup.getText();
-        String matiere=nomMatiere.getActionCommand();
-        String salle=salleG.getActionCommand();
+        String matiere=nomMatiere.getText();
+        String salle=salleG.getText();
         String hdeb=Hdeb.getText();
         String hfin=Hfin.getText();
-        String session=Session.getActionCommand();
-        
-        String requete="INSERT INTO groupe(idGroupe, nomGroupe,matiere,salle,heureDebut,heureFin,session) VALUES ('"+idg+"','"+nomg+"','"+matiere+"','"+salle+"','"+hdeb+"','"+hfin+"','"+session+"',)"; 
+        String session=Session.getText();
+        String requete="INSERT INTO groupe(idGroupe, nomGroupe,matiere,salle,heureDebut,heureFin,session) VALUES ('"+idg+"','"+nomg+"','"+matiere+"','"+salle+"','"+hdeb+"','"+hfin+"','"+session+"')"; 
         try{
            stm.executeUpdate(requete);
            JOptionPane.showMessageDialog(null," groupe Enrigistrer");
         idGroup.setText("");nomGroup.setText("");
         nomMatiere.setActionCommand(matiere);
-        salleG.setActionCommand(salle);Hdeb.setText("");Hfin.setText("");
-         Session.setActionCommand(session);
+        salleG.setText("");Hdeb.setText("");Hfin.setText("");
+         Session.setText("");
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
@@ -205,9 +197,9 @@ Connection conect=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_HdebActionPerformed
 
-    private void nomMatiereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomMatiereActionPerformed
-       
-    }//GEN-LAST:event_nomMatiereActionPerformed
+    private void salleGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salleGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salleGActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,11 +239,13 @@ Connection conect=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Hdeb;
     private javax.swing.JTextField Hfin;
-    private javax.swing.JComboBox<String> Session;
+    private javax.swing.JTextField Session;
     private javax.swing.JComboBox<String> idEtudiant;
     private javax.swing.JTextField idGroup;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -261,7 +255,7 @@ Connection conect=null;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField nomGroup;
-    private javax.swing.JComboBox<String> nomMatiere;
-    private javax.swing.JComboBox<String> salleG;
+    private javax.swing.JTextField nomMatiere;
+    private javax.swing.JTextField salleG;
     // End of variables declaration//GEN-END:variables
 }

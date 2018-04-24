@@ -22,26 +22,7 @@ Connection conect=null;
     ResultSet Rst=null;
     public SaisieNote() {
         initComponents();
-                           FillCombo();
-                   conect=scl.obtenirconnexion();
-                    }
-        public void  FillCombo(){
-                   try {
-                            stm=scl.obtenirconnexion().createStatement();
-   
-                                  ResultSet Rst=stm.executeQuery("Select *from etudiant");
-                                    while(Rst.next()){
-               
-                                            idEtudiant.addItem(Rst.getString("idEtudiant"));
-              
-                
-                
-            }
-    } 
-    catch(Exception e1){System.err.println(e1);{
-    }
-
-}
+                      
     }
 
    
@@ -53,11 +34,13 @@ Connection conect=null;
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        idEtudiant = new javax.swing.JComboBox<>();
         noteE = new javax.swing.JTextField();
         assiduteE = new javax.swing.JTextField();
         evaluationE = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        idEtudiant = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        matiere = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,27 +53,25 @@ Connection conect=null;
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         jLabel4.setText("Assiduté");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jLabel5.setText("Evaluation");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-
-        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 80, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         noteE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 noteEActionPerformed(evt);
             }
         });
-        getContentPane().add(noteE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 90, -1));
+        getContentPane().add(noteE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 90, -1));
 
         assiduteE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assiduteEActionPerformed(evt);
             }
         });
-        getContentPane().add(assiduteE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 90, -1));
-        getContentPane().add(evaluationE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 170, 60));
+        getContentPane().add(assiduteE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 90, -1));
+        getContentPane().add(evaluationE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 170, 60));
 
         jButton1.setText("Enrigistrer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +80,23 @@ Connection conect=null;
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
+
+        idEtudiant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idEtudiantActionPerformed(evt);
+            }
+        });
+        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 90, -1));
+
+        jLabel6.setText("Matiere");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        matiere.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matiereActionPerformed(evt);
+            }
+        });
+        getContentPane().add(matiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 90, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 400));
 
         pack();
@@ -113,21 +111,28 @@ Connection conect=null;
     }//GEN-LAST:event_assiduteEActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
+        String id=idEtudiant.getText();
         String note=noteE.getText();
         String assidute=assiduteE.getText();
         String evaluation=evaluationE.getText();
-          
-        
-        String requete="INSERT INTO etudiant(noteEtudiant, assidute,evalution) VALUES ('"+note+"','"+assidute+"','"+evaluation+"')"; 
+        String matier=matiere.getText();
+        String requete="INSERT INTO note(idEtudiant,noteEtudiant,assidute,evaluation,matiere) VALUES ('"+id+"','"+note+"','"+assidute+"','"+evaluation+"','"+matier+"')"; 
         try{
            stm.executeUpdate(requete);
-           JOptionPane.showMessageDialog(null," ajouter");
-        noteE.setText("");assiduteE.setText("");evaluationE.setText("");
+           JOptionPane.showMessageDialog(null,"ajouter");
+           idEtudiant.setText("");noteE.setText("");assiduteE.setText("");evaluationE.setText("");matiere.setText("");
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void idEtudiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEtudiantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idEtudiantActionPerformed
+
+    private void matiereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matiereActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matiereActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,13 +172,15 @@ Connection conect=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField assiduteE;
     private javax.swing.JTextField evaluationE;
-    private javax.swing.JComboBox<String> idEtudiant;
+    private javax.swing.JTextField idEtudiant;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField matiere;
     private javax.swing.JTextField noteE;
     // End of variables declaration//GEN-END:variables
 }

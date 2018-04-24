@@ -5,8 +5,13 @@
  */
 package school1.pkg0;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,8 +20,10 @@ import javax.swing.JOptionPane;
  */
 public class Nouveau_etudiant extends javax.swing.JFrame {
 SCHOOL10 scl= new SCHOOL10();
+Connection conect;
 Statement stm;
     ResultSet Rst;
+    PreparedStatement ps;
     
     
     public Nouveau_etudiant() {
@@ -52,21 +59,22 @@ Statement stm;
         jLabel6 = new javax.swing.JLabel();
         diE = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Nom_etudiant");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-        getContentPane().add(nomE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 130, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        getContentPane().add(nomE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 130, -1));
 
         jLabel3.setText("Prenom_etudiant");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-        getContentPane().add(prenomE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 130, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        getContentPane().add(prenomE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 130, -1));
 
         jLabel4.setText("Id_etudiant");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-        getContentPane().add(idE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+        getContentPane().add(idE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
 
         jButton1.setText("inscrire");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,22 +82,32 @@ Statement stm;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, -1, -1));
 
         jLabel5.setText("Id_inscription");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
         idiE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idiEActionPerformed(evt);
             }
         });
-        getContentPane().add(idiE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 130, -1));
+        getContentPane().add(idiE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 130, -1));
 
         jLabel6.setText("Date_inscription");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-        getContentPane().add(diE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 130, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+        getContentPane().add(diE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 130, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\Icone-Inscription.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 90));
+
+        jButton2.setText("Modifier");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +136,22 @@ Statement stm;
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       String id=idE.getText();
+        String nom=nomE.getText();
+        String prenom=prenomE.getText();
+        String idi=idiE.getText();
+          String die=diE.getText();
+            String requete="UPDATE  etudiant set idEtudiant='"+id+"', nomEtudiant='"+nom+"',prenomEtudiant=='"+prenom+"',idInscription='"+idi+"',dateInscription='"+die+"' where idEtudiant='"+id+"'"; 
+    try {
+        ps=conect.prepareStatement(requete);
+        ps.execute();
+        JOptionPane.showMessageDialog(null, "Modifier");
+    } catch (SQLException ex) {
+       System.out.println(ex);
+    }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +193,7 @@ Statement stm;
     private javax.swing.JTextField idE;
     private javax.swing.JTextField idiE;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

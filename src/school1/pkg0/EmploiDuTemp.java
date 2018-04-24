@@ -23,10 +23,10 @@ Connection conect=null;
     static String test;
     public EmploiDuTemp() {
         initComponents();
-        affichageEtudiant();
+        affichageEdt();
           conect=scl.obtenirconnexion();
                     }
-    public void  affichageEtudiant(){
+    public void  affichageEdt(){
                    try {
                              
                              stm=scl.obtenirconnexion().createStatement();
@@ -56,7 +56,9 @@ Connection conect=null;
         Edt = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 102, 255));
 
+        Edt.setBackground(new java.awt.Color(255, 0, 255));
         Edt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
