@@ -53,31 +53,41 @@ Statement stm;
         prenomA = new javax.swing.JTextField();
         mdpA = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 450));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ID_Agent");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 61, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nom");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 121, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Prenom");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 165, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Mot de passe");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 228, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         idA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idAActionPerformed(evt);
             }
         });
-        getContentPane().add(idA, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 58, 111, -1));
-        getContentPane().add(nomA, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 118, 111, -1));
-        getContentPane().add(prenomA, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 162, 111, -1));
-        getContentPane().add(mdpA, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 222, 111, -1));
+        getContentPane().add(idA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 111, -1));
+        getContentPane().add(nomA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 111, -1));
+        getContentPane().add(prenomA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 111, -1));
+        getContentPane().add(mdpA, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 111, -1));
 
         jButton1.setText("Ajouter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +95,10 @@ Statement stm;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 266, 114, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 114, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\new Agent.png")); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,6 +166,7 @@ Statement stm;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField mdpA;
     private javax.swing.JTextField nomA;
     private javax.swing.JTextField prenomA;

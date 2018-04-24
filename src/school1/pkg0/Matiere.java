@@ -53,11 +53,13 @@ Statement stm;
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Matiere :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
-        getContentPane().add(Matiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 150, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        getContentPane().add(Matiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, -1));
 
         jButton1.setText("Ajouter");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,45 +67,51 @@ Statement stm;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 100, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 100, -1));
 
         jButton2.setText("Modifier");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 100, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 100, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("id_Matiere");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         idMatiere.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idMatiereActionPerformed(evt);
             }
         });
-        getContentPane().add(idMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, -1));
+        getContentPane().add(idMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 150, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Libelle");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         LIbelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LIbelleActionPerformed(evt);
             }
         });
-        getContentPane().add(LIbelle, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 150, -1));
+        getContentPane().add(LIbelle, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 150, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("loglibellematiere");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-        getContentPane().add(LogLM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        getContentPane().add(LogLM, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 150, 30));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Niveau");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
 
         Niveau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NiveauActionPerformed(evt);
             }
         });
-        getContentPane().add(Niveau, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 150, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
+        getContentPane().add(Niveau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 150, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\mat.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

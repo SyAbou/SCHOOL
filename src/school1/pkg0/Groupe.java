@@ -73,41 +73,47 @@ Connection conect=null;
         Hfin = new javax.swing.JTextField();
         salleG = new javax.swing.JTextField();
         Session = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         nomMatiere = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("id_Groupe");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 60, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
 
         idGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idGroupActionPerformed(evt);
             }
         });
-        getContentPane().add(idGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 130, -1));
+        getContentPane().add(idGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 130, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nom_Groupe");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         nomGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomGroupActionPerformed(evt);
             }
         });
-        getContentPane().add(nomGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 130, -1));
+        getContentPane().add(nomGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 130, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Salle");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 30, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 30, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Heure_Debut");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Session");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         jButton1.setText("Enregistrer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,46 +121,50 @@ Connection conect=null;
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("id_etudiant");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         idEtudiant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idEtudiantActionPerformed(evt);
             }
         });
-        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 130, 20));
+        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, 20));
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Matiere");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         Hdeb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HdebActionPerformed(evt);
             }
         });
-        getContentPane().add(Hdeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 60, -1));
+        getContentPane().add(Hdeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 60, -1));
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Heure_Fin");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
-        getContentPane().add(Hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 70, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
+        getContentPane().add(Hfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 70, -1));
 
         salleG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salleGActionPerformed(evt);
             }
         });
-        getContentPane().add(salleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 120, -1));
-        getContentPane().add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 130, -1));
+        getContentPane().add(salleG, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 120, -1));
+        getContentPane().add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 130, -1));
+        getContentPane().add(nomMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 130, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\groupe.png")); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 230, 140));
-        getContentPane().add(nomMatiere, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 130, -1));
-
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("(Anglais,Francais,Allemand,Arabe,Espagnole)");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\groupe.png")); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -244,8 +254,8 @@ Connection conect=null;
     private javax.swing.JTextField idGroup;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -72,42 +72,53 @@ Connection conect=null;
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Id_paiement");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
-        getContentPane().add(idP, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        getContentPane().add(idP, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 130, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Montant total");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-        getContentPane().add(MT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        getContentPane().add(MT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Date echeance 1");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-        getContentPane().add(ECH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        getContentPane().add(ECH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 130, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Date echeance 2");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        getContentPane().add(ECH2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 130, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+        getContentPane().add(ECH2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, -1));
 
+        jButton1.setBackground(new java.awt.Color(40, 156, 210));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\valid.png")); // NOI18N
         jButton1.setText("Valider");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 100, 30));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Id_etudiant");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         idEtudiant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idEtudiantActionPerformed(evt);
             }
         });
-        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 130, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(idEtudiant, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\PAIE.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

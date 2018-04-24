@@ -39,6 +39,7 @@ public class Administrateur extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Inscription");
@@ -47,7 +48,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 120, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 120, 30));
 
         jButton2.setText("Paiement");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +56,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 110, 30));
 
         jButton3.setText("Salle");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +64,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 100, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, 30));
 
         jButton4.setText("Suivi Pedagogique");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +72,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
 
         jButton5.setText("Matiere");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +80,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 100, 30));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 100, 30));
 
         jButton6.setText("Groupe");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 120, 30));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 120, 30));
 
         jButton7.setText("Horaire");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +96,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 110, 30));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 110, 30));
 
         jButton8.setText("Session");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +104,7 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 90, 30));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 90, 30));
 
         jButton9.setText("Ajout Agent");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -111,10 +112,10 @@ public class Administrateur extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Documents\\NetBeansProjects\\SCHOOL1.0\\administrateur.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 420));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\directeur.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
