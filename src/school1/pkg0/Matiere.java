@@ -52,7 +52,7 @@ Statement stm;
         Niveau = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,7 +111,7 @@ Statement stm;
         getContentPane().add(Niveau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 150, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\abou\\Desktop\\mat.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 440));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
